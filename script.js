@@ -107,3 +107,57 @@ function maior(){
 
     document.getElementById("msg7").innerText = `O maior número é ${maior}\nO menor número é ${menor}`; 
 }
+
+function aumento(){
+    let recebimento = Number(document.getElementById("recebimento").value);
+    let percentual_aumento;
+    let valor_aumento;
+    let novo_salario;
+
+
+    if(recebimento<=280 && recebimento > 0){
+        percentual_aumento = 20; 
+    }
+    else if(recebimento > 280 && recebimento <= 700){
+        percentual_aumento = 15;
+    }
+    else if(recebimento > 700 && recebimento <= 1500){
+        percentual_aumento = 10;
+    }
+    else if(recebimento > 1500){
+        percentual_aumento = 5;
+    }
+
+    valor_aumento = recebimento * percentual_aumento/100;
+    novo_salario = valor_aumento + recebimento;
+
+    document.getElementById("msg8").innerText = `Salário antes do reajuste: R$${recebimento}\nPercentual de aumento: %${percentual_aumento}\nValor do aumento R$${valor_aumento}\nO valor do novo salário é de R$${novo_salario}`;
+}
+
+function roubo(){
+    let valor = Number(document.getElementById("valor").value);
+    let horas = Number(document.getElementById("horas").value);
+    let salario_bruto = valor * horas;
+    let ir = 0;
+    let ir_descontado = 0;
+    let inss = salario_bruto * 10/100;
+    let fgts = salario_bruto * 11/100;
+    let total_descontado = 0;
+    let salario_liquido = 0;
+
+    if(salario_bruto >= 900 && salario_bruto < 1500){
+        ir = 5;
+    }
+    else if(salario_bruto >= 1500 && salario_bruto < 2500){
+        ir = 10;
+    }
+    else if(salario_bruto >= 2500){
+        ir = 20;
+    }
+
+    ir_descontado = salario_bruto * ir/100;
+    total_descontado = ir_descontado + inss;
+    salario_liquido = salario_bruto - total_descontado;
+
+    document.getElementById("msg9").innerText = `Salário bruto: R$${salario_bruto}\n(-)IR (%${ir}): R$${ir_descontado}\n(-)INSS (10%): R$${inss}\nFGTS (11%): R$${fgts}\nTotal de descontos: R$${total_descontado}\nSalário liquido: R$${salario_liquido}`;
+}   
