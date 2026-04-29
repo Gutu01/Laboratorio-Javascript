@@ -177,3 +177,14 @@ function triangulo(){
         document.getElementById("msg10").innerText = "Seu triâgulo é escaleno!";
     }
 }
+
+function ano(){
+    let ano = Number(document.getElementById("ano").value);
+
+    if((ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0)){
+        document.getElementById("msg11").innerText = "Seu ano é bissexto!";
+    }
+    else{
+        document.getElementById("msg11").innerText = "Seu ano não é bissexto!";
+    }
+}
