@@ -161,3 +161,19 @@ function roubo(){
 
     document.getElementById("msg9").innerText = `Salário bruto: R$${salario_bruto}\n(-)IR (%${ir}): R$${ir_descontado}\n(-)INSS (10%): R$${inss}\nFGTS (11%): R$${fgts}\nTotal de descontos: R$${total_descontado}\nSalário liquido: R$${salario_liquido}`;
 }   
+
+function triangulo(){
+    let lado1 = Number(document.getElementById("lado1").value);
+    let lado2 = Number(document.getElementById("lado2").value);
+    let lado3 = Number(document.getElementById("lado3").value);
+
+    if(lado1 == lado2 && lado2 == lado3){
+        document.getElementById("msg10").innerText = "Seu triângulo é equilátero!";
+    }
+    else if(lado1 == lado2 || lado2 == lado3 || lado1 == lado3){
+        document.getElementById("msg10").innerText = "Seu triâgulo é isósceles!";
+    }
+    else{
+        document.getElementById("msg10").innerText = "Seu triâgulo é escaleno!";
+    }
+}
